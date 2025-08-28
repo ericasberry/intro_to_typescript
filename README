@@ -1,0 +1,11 @@
+        npm install -g typescript
+        # or
+        npm install --save-dev typescript
+
+        See tsconfig.json
+
+        Install types:
+
+        npm install --save-dev @types/node @types/express # Example for Node.js and Express
+
+        right click on file and run instead of 'node index.ts'
