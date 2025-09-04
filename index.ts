@@ -23,6 +23,18 @@ const menu: Pizza[] =[
 ]
 
 
+// contrived generics example
+function addToArray<T>(array: T[], item: T): T[] {
+    array.push(item);
+    return array;
+}
+
+addToArray<Pizza>(menu, { id: nextPizzaId++, name: "Chicken Bacon Ranch", price: 13 });
+addToArray<Order>(orderQueue, { id: nextOrderId++, pizza: menu[2], status: "completed"});
+
+
+// Omit<T, K> makes properties specified in K optional for type T
+// K can be a union type, e.g. "id" | "price"
 // void return type means that the function does not return a value
 function addNewPizza(pizzaObj: Omit<Pizza, "id">): Pizza {
   const newPizza: Pizza = {
